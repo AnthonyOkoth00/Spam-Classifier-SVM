@@ -1,2 +1,2 @@
 # Spam-Classifier-SVM
-Building a Spam Classifier using Support Vector Machines in MatLab.
+Building a Spam Classifier using Support Vector Machines in Matlab.
