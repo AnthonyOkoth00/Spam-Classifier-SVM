@@ -22,9 +22,24 @@ sigma = 0.3;
 %  Note: You can compute the prediction error using 
 %        mean(double(predictions ~= yval))
 %
+load('ex6data3.mat');
+steps = [0.01 0.03 0.1 0.3 1 3 10 30]';
+error = zeros(64,1);
+k = 1;
 
-
-
+for i=1:length(steps)
+    for j=1: length(steps)
+        model = svmTrain(X, y, steps(i), @(x1, x2) gaussianKernel(x1, x2, steps(j)));
+        predictions = svmPredict(model, Xval);
+        error(k,1) = mean(double(predictions ~= yval));
+        k = k + 1;
+    end
+end
+[Minval, val] = min(error);
+indexC = fix((val/8));
+indexSigma = mod(val,8);
+C = steps(indexC, 1)
+sigma = steps(indexSigma, 1)
 
 
 
