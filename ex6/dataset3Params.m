@@ -38,8 +38,8 @@ end
 [Minval, val] = min(error);
 indexC = fix((val/8));
 indexSigma = mod(val,8);
-C = steps(indexC, 1)
-sigma = steps(indexSigma, 1)
+C = steps(indexC, 1);
+sigma = steps(indexSigma, 1);
 
 
 
