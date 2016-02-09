@@ -96,13 +96,17 @@ while ~isempty(email_contents)
     % Note: You can use strcmp(str1, str2) to compare two strings (str1 and
     %       str2). It will return 1 only if the two strings are equivalent.
     %
-
-for i=1:length(vocabList)
-	if(strcmp(str, vocabList{i}) == 1)
-		idx = find(vocabList{i} == str, 1)
-		word_indices = [word_indices ; idx];
-	endif
-endfor
+    match = find(strcmp(str, vocabList))
+    %index = find(match);
+    word_indices = [word_indices ; match];
+	%if(strcmp(str, vocabList{i}) == 1)
+    %   booleanIdx = strcmp(str, vocabList{i});
+	%	idx = find(booleanIdx)
+	%	word_indices = [word_indices ; idx];
+    %end
+word_indices
+    
+    
 
 
     % =============================================================
